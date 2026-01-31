@@ -1,9 +1,11 @@
 **Laporan Proyek Machine Learning - Dimas Ananta Kusuma/231113007**
 
 **Project Domain**
+
 Industri hiburan digital menghadapi tantangan Information Overload, di mana pengguna kesulitan memilih film dari ribuan katalog. Sistem rekomendasi menjadi solusi krusial untuk mempersonalisasi saran film bagi pengguna guna meningkatkan kepuasan dan retensi pada platform platform streaming.
 
 **Business Understanding**
+
 Problem Statements
 -Bagaimana cara merekomendasikan film yang serupa dengan film yang pernah ditonton pengguna berdasarkan karakteristik genre?
 -Seberapa akurat algoritma Matrix Factorization (SVD) dalam memprediksi rating film untuk pengguna?
@@ -17,6 +19,7 @@ Solution statements
 -Solution 2 (Collaborative): Menggunakan algoritma SVD (Singular Value Decomposition) yang mampu menangkap pola tersembunyi (latent factors) dari interaksi pengguna dan film.
 
 **Data Understanding**
+
 Dataset yang digunakan adalah MovieLens Dataset (versi small) yang mencakup beberapa berkas utama:
 -movie.csv: Data profil film (62.423 baris) berisi movieId, title, dan genres.
 -rating.csv: Interaksi pengguna (25.000.095 baris) berisi userId, movieId, rating, dan timestamp. (Digunakan subset 100.000 baris).
@@ -27,12 +30,14 @@ Variabel Utama:
 -rating: Target prediksi (skala 0.5 - 5.0) untuk Collaborative Filtering.
 
 **Data Preparation**
+
 -Data Selection: Memilih file movie.csv dan rating.csv sebagai sumber data utama.
 -Data Cleaning: Menghapus nilai kosong (missing values) dan data duplikat untuk menjaga kualitas model.
 -Feature Engineering: Membersihkan string pada kolom genre agar dapat diproses oleh vectorizer.
 -Data Splitting: Membagi data rating menjadi 80% data latih dan 20% data uji untuk evaluasi model SVD.
 
 **Modeling**
+
 1. Content-Based Filtering
 Model ini merekomendasikan film berdasarkan kemiripan konten (genre).
 
@@ -60,6 +65,7 @@ Kelebihan: Mampu menangkap selera pengguna yang kompleks melampaui sekadar genre
 Kekurangan: Mengalami kesulitan saat menghadapi pengguna baru yang belum memberikan rating (user-side cold start).
 
 **Evaluation**
+
 Metrik evaluasi yang digunakan adalah RMSE (Root Mean Squared Error), yang mengukur rata-rata penyimpangan antara rating prediksi dan rating aktual.
 
 Python
